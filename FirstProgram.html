@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <style>
+        body {
+          margin: 0px;
+          padding: 0px;
+        }
+        /*musi byt zhodne s element ID*/
+        #canvas1 { 
+          border: 3px solid black;
+        }
+      </style>
+    </head>
 <body>
 
 <h2>My Heading</h2>
 
 <p>Play around with the code and click on the "Run" button to view the result. Something new i just added.</p>
-<button onclick="onclickType()">Click me</button>
-<p id="demo"></p>
+<canvas id="canvas1" height="200" width="500">New canvas</canvas>
 <script>
-function onclickType(){
-    console.log("Hello World");
-}
-function newOne(){
-    
-}
+    var canvas = document.getElementById("canvas1");
+    var context = canvas.getContext("2d");
+
+    var x = canvas.width/2;
+    var y = canvas.height/2;
+    context.font = "30pt Calibri";
+    context.textAlign = "center";
+    context.fillStyle = "blue";
+    context.fillText("Hello World!", x, y);
+
 </script>
 </body>
 </html>
